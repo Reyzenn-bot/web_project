@@ -7,14 +7,14 @@
     <title>705 Computer Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/rey/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="bg-white py-3 border-bottom">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center gap-2">
-                <img src="/rey/705logo.jpg" alt="Logo" class="header-logo">
+                <img src="705logo.jpg" alt="Logo" class="header-logo">
                 <h4 class="fw-bold m-0 text-primary">705 Computer Store</h4>
             </div>
             <div class="search-box-wrapper w-45">
@@ -25,42 +25,98 @@
                 <a href="#" class="text-secondary text-decoration-none">
                     <i class="fa-regular fa-heart fs-4"></i>
                 </a>
-                <a href="#" class="cart-box d-flex align-items-center gap-2 text-decoration-none text-nowrap">
+                <a href="#cartOffcanvas" data-bs-toggle="offcanvas" role="button"
+                    class="cart-box d-flex align-items-center gap-2 text-decoration-none text-nowrap">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="fw-semibold">Cart</span>
                 </a>
-                <button class="btn btn-primary rounded-pill px-4 py-2 text-nowrap fw-bold">Log In</button>
+                <button class="btn btn-primary rounded-pill px-4 py-2 text-nowrap fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
+                    Log In
+                </button>
             </div>
         </div>
     </header>
     <nav class="main-nav py-2 bg-primary sticky-top shadow-sm">
         <div class="container d-flex justify-content-center gap-4">
-            <a class="nav-link  text-white" href="/rey/index.html">Home</a>
-            <a class="nav-link  text-white " href="/rey/windows.html">Windows laptops</a>
-            <a class="nav-link  text-white " href="#mac">Mac laptops</a>
-            <a class="nav-link  text-white " href="/rey/desktop.html">Desktop PC</a>
-            <a class="nav-link  text-white " href="/rey/accessories.html">Accessories</a>
+            <a class="nav-link  text-white" href="index.html">Home</a>
+            <a class="nav-link  text-white " href="windows.html">Windows laptops</a>
+            <a class="nav-link  text-white " href="mac.html">Mac laptops</a>
+            <a class="nav-link  text-white " href="desktop.html">Desktop PC</a>
+            <a class="nav-link  text-white " href="accessories.html">Accessories</a>
         </div>
     </nav>
 
     <div class="container my-4">
-        <div id="heroCarousel" class="carousel slide hero-banner position-relative" data-bs-ride="true"
-            data-bs-interval="3000">
+        <!-- Hero Carousel - Mac Laptop Spotlight -->
+        <div id="heroCarousel" class="carousel slide hero-banner position-relative" data-bs-ride="carousel"
+            data-bs-interval="3000" data-bs-pause="false">
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators mb-2">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Carousel Inner Content -->
             <div class="carousel-inner rounded-4"
-                style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 60px 40px; color: white;">
+                style="background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%); padding: 60px 40px; color: white;">
+
+                <!-- Slide 1: Apple Silicon & macOS -->
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h2 class="fw-bold display-5">Welcome to our store....</h2>
-                            <p class="fs-5 opacity-75">We have quality computer ...</p>
+                            <h2 class="fw-bold display-5">MacBook Air & Pro</h2>
+                            <p class="fs-5 opacity-75">Unmatched performance and industry-leading efficiency powered by
+                                Apple Silicon.</p>
                         </div>
                         <div class="banner-circle d-none d-md-block"
-                            style="width: 160px; height: 160px; background-color: #64b5f6; border-radius: 50%;"></div>
+                            style="width: 160px; height: 160px; background-color: #a2aaad; border-radius: 50%;"></div>
                     </div>
                 </div>
+
+                <!-- Slide 2: Pro Workflows -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="fw-bold display-5">Pro Power for Creators</h2>
+                            <p class="fs-5 opacity-75">Fly through 8K video editing, 3D rendering, and complex code
+                                compilation seamlessly.</p>
+                        </div>
+                        <div class="banner-circle d-none d-md-block"
+                            style="width: 160px; height: 160px; background-color: #e3c8ac; border-radius: 50%;"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: All-Day Battery & Display -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="fw-bold display-5">Liquid Retina XDR</h2>
+                            <p class="fs-5 opacity-75">Stunning high-dynamic-range displays paired with up to 22 hours
+                                of battery life.</p>
+                        </div>
+                        <div class="banner-circle d-none d-md-block"
+                            style="width: 160px; height: 160px; background-color: #7d7e80; border-radius: 50%;"></div>
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Navigation Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
         </div>
+
         <main class="container my-5">
 
             <section id="mac" class="mb-5 position-relative">
@@ -494,7 +550,7 @@
                                 <span class="fw-bold fs-5">$2,899</span>
                                 <button class="btn btn-primary view-detail-btn" data-bs-toggle="modal"
                                     data-bs-target="#productDetailModal" data-title="MacBook Pro 16-inch (M3 Pro 36GB)"
-                                    data-img="https://th.bing.com/th/id/OIP.SvI3jJb7WNimYx3udOOAgQHaHa?w=160&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" 
+                                    data-img="https://th.bing.com/th/id/OIP.SvI3jJb7WNimYx3udOOAgQHaHa?w=160&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
                                     data-price="$2,899" data-cpu="Apple M3 Pro (12-core CPU)"
                                     data-ram="36GB Unified Memory" data-storage="512GB SSD" data-gpu="18-core GPU"
                                     data-display="16.2 Liquid Retina XDR"
@@ -639,7 +695,7 @@
             </div>
         </footer>
     </div>
-    
+
     <!-- View Detail Modal -->
     <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -725,8 +781,62 @@
             </div>
         </div>
     </div>
+    <!--modal-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">Your Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="cart-items-container">
+            </div>
+            <div class="border-top pt-3">
+                <div class="d-flex justify-content-between mb-3 fs-5 fw-bold">
+                    <span>Total:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+                <button class="btn btn-primary w-100 py-2 rounded-pill fw-bold">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pb-4">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold text-primary" id="loginModalLabel">705 Computer Store</h4>
+                        <p class="text-muted small">Sign in to manage your account and orders</p>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label fw-semibold">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="••••••••"
+                                required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label small" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="small text-decoration-none">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-bold">Log
+                            In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/rey/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
