@@ -1,6 +1,17 @@
-body {
+html, body {
     background-color: whitesmoke;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
 }
 section[id] {
     scroll-margin-top: 100px;
@@ -101,8 +112,16 @@ section[id] {
 .custom-footer {
     background-color: royalblue;
     color: white;
-    border-radius: 25px 25px 0 0;
+    border-radius: 0; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: auto !important;
 }
+
 .custom-footer input[type="email"] {
     text-align: left !important;
     padding-left: 20px !important;
