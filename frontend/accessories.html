@@ -28,7 +28,7 @@
                 <a href="#cartOffcanvas" data-bs-toggle="offcanvas" role="button"
                     class="cart-box d-flex align-items-center gap-2 text-decoration-none text-nowrap">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="fw-semibold">Cart</span>
+                    <span class="fw-semibold">My Cart</span>
                 </a>
                 <button class="btn btn-primary rounded-pill px-4 py-2 text-nowrap fw-bold" data-bs-toggle="modal"
                     data-bs-target="#loginModal">
@@ -807,7 +807,7 @@
                             </div>
 
                             <div class="d-flex gap-2">
-                                <button class="btn btn-primary flex-grow-1 fw-bold text-uppercase py-2">
+                                <button class="btn btn-primary flex-grow-1 fw-bold text-uppercase py-2" id="btnAddToCartModal">
                                     ADD TO CART
                                 </button>
                                 <button class="btn btn-outline-primary flex-grow-1 fw-bold text-uppercase py-2">
@@ -848,6 +848,7 @@
                 </div>
                 <div class="modal-body px-4 pb-4">
                     <div class="text-center mb-4">
+                        <img src="/frontend/705logo.jpg" alt="Logo" style="height: 50px; width: auto;">
                         <h4 class="fw-bold text-primary" id="loginModalLabel">705 Computer Store</h4>
                         <p class="text-muted small">Sign in to manage your account and orders</p>
                     </div>

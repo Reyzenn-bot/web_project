@@ -18,13 +18,10 @@
                 <img src="705logo.jpg" alt="Logo" class="header-logo">
                 <h4 class="fw-bold m-0 text-primary">705 Computer Store</h4>
             </div>
-            <form action="/search" method="get" class="search-box-wrapper w-45" role="search">
-                <input type="search" name="q" class="form-control custom-search-input" placeholder="Search..."
-                    aria-label="Search">
-                <button type="submit" class="search-btn" aria-label="Submit search">
-                    <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-                </button>
-            </form>
+            <div class="search-box-wrapper w-45">
+                <input type="text" class="form-control custom-search-input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
             <div class="d-flex align-items-center gap-3">
                 <a href="#" class="text-secondary text-decoration-none">
                     <i class="fa-regular fa-heart fs-4"></i>
@@ -32,7 +29,7 @@
                 <a href="#cartOffcanvas" data-bs-toggle="offcanvas" role="button"
                     class="cart-box d-flex align-items-center gap-2 text-decoration-none text-nowrap">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="fw-semibold">Cart</span>
+                    <span class="fw-semibold">My Cart</span>
                 </a>
                 <button class="btn btn-primary rounded-pill px-4 py-2 text-nowrap fw-bold" data-bs-toggle="modal"
                     data-bs-target="#loginModal">
@@ -699,7 +696,7 @@
                                 </div>
 
                                 <div class="d-flex gap-2">
-                                    <button class="btn btn-primary flex-grow-1 fw-bold text-uppercase py-2">
+                                    <button class="btn btn-primary flex-grow-1 fw-bold text-uppercase py-2"​​ id="btnAddToCartModal">
                                         ADD TO CART
                                     </button>
                                     <button class="btn btn-outline-primary flex-grow-1 fw-bold text-uppercase py-2">
@@ -714,6 +711,7 @@
                 </div>
             </div>
         </div>
+
         <!--modal-->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
             <div class="offcanvas-header border-bottom">
@@ -732,6 +730,7 @@
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content border-0 shadow">
@@ -740,6 +739,7 @@
                     </div>
                     <div class="modal-body px-4 pb-4">
                         <div class="text-center mb-4">
+                            <img src="/frontend/705logo.jpg" alt="Logo" style="height: 50px; width: auto;">
                             <h4 class="fw-bold text-primary" id="loginModalLabel">705 Computer Store</h4>
                             <p class="text-muted small">Sign in to manage your account and orders</p>
                         </div>

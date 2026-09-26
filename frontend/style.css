@@ -5,7 +5,17 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.offcanvas-backdrop{
+    pointer-events: auto !important;
+    opacity: 0.5 !important;
+}
+.modal-backdrop {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+}
 body {
+    overflow: auto !important;
+    padding-right: 0 !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -167,4 +177,35 @@ section[id] {
     height: 30px;
     width: auto;
     object-fit: contain;
+}
+
+@media (max-width: 991.98px) {
+    .header-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .custom-search-width {
+        width: 100%; 
+    }
+    section[id] {
+        scroll-margin-top: 80px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header-logo {
+        width: 65px;
+        height: 65px;
+    }
+    .product-card {
+        border-radius: 20px; 
+        padding: 12px;
+    }
+    .product-img-wrapper {
+        height: 140px; 
+    }
+    .cart-box {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
 }
